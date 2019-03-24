@@ -1,0 +1,9 @@
+.highlight-blue-inline{
+    color: #4117ff;
+}
+
+.noborder .reveal section img {
+    background:none; 
+    border:none; 
+    box-shadow:none;
+}

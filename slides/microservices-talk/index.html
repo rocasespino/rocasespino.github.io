@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>EIP Acme</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/beige.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/additional.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body class="noborder">
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<div class="title">
+					<small>Integration Data Flow</small>
+					<h3>Routing Data Through Multiple Systems</h3>
+					<h5>04.2018 --- Berlin</h5>
+					<h5><a href="emailto:rocasespino@gmail.com">Roger Castillo</a> / <a
+							href="https://twitter.com/rocasespino" traget="_blank">@rocasespino</a></h5>
+				</div>
+			</section>
+			<section>
+				<h2>About me</h2>
+				<ul>
+					<li class="fragment">Solution Architect</li>
+					<li class="fragment">Java / Databases / Angular+</li>
+					<li class="fragment">Integration Systems</li>
+					<li class="fragment">Content Management Systems</li>
+					<li class="fragment">and so on..</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Agenda</h2>
+				<ul>
+					<li class="fragment">Motivation</li>
+					<li class="fragment">Real-life Scenario</li>
+					<li class="fragment">Enterprise Application</li>
+					<li class="fragment">Apache Camel</li>
+					<li class="fragment">Summary</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Motivation</h2>
+				<small>Would it be possible for you to show an example project?</small>
+				<p class="fragment">Sure, but what??</p>
+				<p class="fragment">Data Flow using an Integration System</p>
+				<p class="fragment">Now, we only need to find a proper scenario...</p>
+			</section>
+			<section>
+				<section>
+					<h3>Example Scenario</h3>
+					<small>I will need your help, so please, be interactive</small>
+					<p>A company, for instance, Acme has multiple departments that require social media
+						information to process in their systems.
+					</p>
+				</section>
+				<section>
+					<h2>Acme Enterprise</h2>
+					<a href="#" class="navigate-down">
+						<img data-src="./image/enterprise_app_1.png">
+					</a>
+				</section>
+				<section>
+					<h2>Dept_1: Marketing Deparment</h2>
+					<p>
+						Needs to show in its webpage, the newest tweet about the company using the hashtag <span
+							class="highlight-blue-inline">#helloacme</span></p>
+				</section>
+				<section>
+					<h2>Dept_2: BI Deparment</h2>
+					<p>Wants to store all tweets containing the same hashtag in a database for further information
+						anaylsis.</p>
+				</section>
+				<section>
+					<h2>Dept_3: Customer Relationship department</h2>
+					<p>Requires the information on a messaging system for further interaction with the customers.</p>
+				</section>
+			</section>
+			<section>
+				<h2>Acme Enterprise Applications</h2>
+				<section>
+					<h3>Dept_1: Marketing System</h3>
+					<p>Simple Python Web Server</p>
+					<a href="#" class="navigate-down">
+						<img data-src="./image/python.png">
+					</a>
+				</section>
+				<section>
+					<h3>Dept_2: BI System</h3>
+					<p>Springboot Application Hibernate/MySQL</p>
+					<a href="#" class="navigate-down">
+						<img width="250" data-src="./image/springboot.png">
+					</a>
+					<a href="#" class="navigate-down">
+						<img width="150" data-src="./image/mysql.png">
+					</a>
+				</section>
+				<section>
+					<h3>Dept_3: CRM System</h3>
+					<p>Apache ActiveMQ System</p>
+					<a href="#" class="navigate-down">
+						<img data-src="./image/activemq.png">
+					</a>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Acme Integration System</h2>
+					<a href="#" class="navigate-down">
+						<img data-src="./image/routes_msg.png">
+					</a>
+				</section>
+				<section>
+					<h2>Apache Camel EIP </h2>
+					<a href="#" class="navigate-down">
+						<img width="450" data-src="./image/camel-components.png">
+					</a>
+					<h4>Apache Camel Components</h4>
+				</section>
+				<section>
+					<h2>Message Route Builder</h2>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+public class JmsRouteBuilder extends RouteBuilder {
+
+	@Override
+	public void configure() throws Exception {
+		from("direct:writeQueue")
+			.log("Getting into messaging queue")
+			.to("log:?level=INFO&showBody=true")
+			.to("activemq:queue:myTestQueue");
+	}
+}
+						</code>
+					</pre>
+					<p>Camel Routes Implementation Code</p>
+				</section>
+				<section>
+					<p>Now let's see it working...</p>
+					</section>		
+			</section>
+			<section>
+					<iframe width="100%" height="300px" data-src="http://localhost:8080/streamed_tweet.html"></iframe>
+			</section>
+			<section>
+				<h2>Summary</h2>
+				<ul>
+						<li class="fragment">Reuse and conquer</li>
+						<li class="fragment">Search and you will find</li>
+						<li class="fragment">Camel is funny, but at the same time challenging</li>
+						<li class="fragment">System Integration is everywhere</li>
+					</ul>
+			</section>
+			<section>
+					<h2>Thanks</h2>
+					<h5><a href="emailto:rocasespino@gmail.com">Roger Castillo</a> </h5>
+					<h5><a href="https://twitter.com/rocasespino" traget="_blank">twitter: @rocasespino</a></h5>
+					<p></p>
+				</section>
+	
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>

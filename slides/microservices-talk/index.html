@@ -122,72 +122,6 @@
 				</section>
 			</section>
 			<section>
-				<h2>Acme Enterprise Applications</h2>
-				<section>
-					<h3>Dept_1: Marketing System</h3>
-					<p>Simple Python Web Server</p>
-					<a href="#" class="navigate-down">
-						<img data-src="./image/python.png">
-					</a>
-				</section>
-				<section>
-					<h3>Dept_2: BI System</h3>
-					<p>Springboot Application Hibernate/MySQL</p>
-					<a href="#" class="navigate-down">
-						<img width="250" data-src="./image/springboot.png">
-					</a>
-					<a href="#" class="navigate-down">
-						<img width="150" data-src="./image/mysql.png">
-					</a>
-				</section>
-				<section>
-					<h3>Dept_3: CRM System</h3>
-					<p>Apache ActiveMQ System</p>
-					<a href="#" class="navigate-down">
-						<img data-src="./image/activemq.png">
-					</a>
-				</section>
-			</section>
-			<section>
-				<section>
-					<h2>Acme Integration System</h2>
-					<a href="#" class="navigate-down">
-						<img data-src="./image/routes_msg.png">
-					</a>
-				</section>
-				<section>
-					<h2>Apache Camel EIP </h2>
-					<a href="#" class="navigate-down">
-						<img width="450" data-src="./image/camel-components.png">
-					</a>
-					<h4>Apache Camel Components</h4>
-				</section>
-				<section>
-					<h2>Message Route Builder</h2>
-					<pre>
-						<code class="hljs" data-trim contenteditable>
-public class JmsRouteBuilder extends RouteBuilder {
-
-	@Override
-	public void configure() throws Exception {
-		from("direct:writeQueue")
-			.log("Getting into messaging queue")
-			.to("log:?level=INFO&showBody=true")
-			.to("activemq:queue:myTestQueue");
-	}
-}
-						</code>
-					</pre>
-					<p>Camel Routes Implementation Code</p>
-				</section>
-				<section>
-					<p>Now let's see it working...</p>
-					</section>		
-			</section>
-			<section>
-					<iframe width="100%" height="300px" data-src="http://localhost:8080/streamed_tweet.html"></iframe>
-			</section>
-			<section>
 				<h2>Summary</h2>
 				<ul>
 						<li class="fragment">Reuse and conquer</li>
@@ -205,12 +139,12 @@ public class JmsRouteBuilder extends RouteBuilder {
             <section>
                 <h2>References</h2>
                 <ul>
-                    <li class="fragment">https://martinfowler.com/articles/microservices.html</li>
-                    <li class="fragment">https://articles.microservices.com/</li>
-                    <li class="fragment">https://www.leanix.net/en/blog/a-brief-history-of-microservices</li>
-                    <li class="fragment">http://cloudfoundry.com/</li>
-                    <li class="fragment">https://netflixtechblog.com/tagged/microservices</li>
-                    <li class="fragment">https://aws.amazon.com/de/microservices</li>
+                    <li>https://martinfowler.com/articles/microservices.html</li>
+                    <li>https://articles.microservices.com/</li>
+                    <li>https://www.leanix.net/en/blog/a-brief-history-of-microservices</li>
+                    <li>http://cloudfoundry.com/</li>
+                    <li>https://netflixtechblog.com/tagged/microservices</li>
+                    <li>https://aws.amazon.com/de/microservices</li>
 
 
                 </ul>

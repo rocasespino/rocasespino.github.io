@@ -82,20 +82,29 @@
                     <p class="fragment">Let's take a look at Microservices</p>
                 </section>
                 <section>
-                    <h2>Why?</h2>
-                    <ul>
-                        <li class="fragment">Interesting concept, goes back to 2005</li>
-                        <li class="fragment">Attracting attention in 2011 (Netflix, Amazon)</li>
-                        <li class="fragment">Aims to solve problems of monolithic apps</li>
-                        <l1 class="fragment"><img data-src="./image/Monolithic_and_ms_architectures.png" width="70%">
-                        </l1>
-                    </ul>
+									<h2>Why?</h2>
+									<ul>
+										<li class="fragment">Interesting concept, goes back to 2005</li>
+										<li class="fragment">Attracting attention in 2011 (Netflix, Amazon)</li>
+										<li class="fragment">Aims to solve problems of monolithic apps</li>
+									</ul>
+									<img class="fragment" data-src="./image/Monolithic_and_ms_architectures.png" width="70%"/>
+									<aside class="notes">
+										<ul>
+											<li class="">Dr. Peter Rodgers, got used the term "Micro-Web-Services" 2005 at a Cloud Computing Conference5</li>
+											<li class="">Software Architects Conference, 2001</li>
+										</ul>
+									</aside>
                 </section>
                 <section>
                     <h3>A MS definition by Martin Fowler:</h3>
                     <blockquote cite="https://martinfowler.com/articles/microservices.html">
                         &ldquo;A particular way of designing software applications as suites of independently deployable services.&rdquo;
                     </blockquote>
+									<aside class="notes">
+										Martin Fowler: Author, conferencista, evangelista del desarrollo de sw, fan del metodo agil.
+										Una forma de disenar aplicaciones de sw en forma de servicios que se pueden publicar independientemente
+									</aside>
                 </section>
                 <section>
                     <h3>MS characteristics</h3>
@@ -107,6 +116,15 @@
                         <li class="fragment">Scalability and Maintenance</li>
                         <li class="fragment">Agrees with <a href="https://12factor.net/">Twelve-Factor App</a>
                     </ul>
+
+									<aside class="notes">
+										<ul>
+											<li class="">Servicios con funcionalidad de negocio encapsulada</li>
+											<li class="">Poca cohesion, por lo tanto pueden ser desarrados en dierentes tecnologias</li>
+											<li class="">Con interfaces bien definidas</li>
+											<li class="">Concuerda con las 12 Factores para generar applicaciones</li>
+										</ul>
+									</aside>
                 </section>
                 <section>
                     <h3>Monolithic and Microservice Architectural Patterns</h3>
@@ -123,11 +141,18 @@
                 <section>
                     <h3>Microservices Pros and Cons</h3>
                     <ul>
-                        <li class="fragment">Facilitates deployments, but complex distributed system </li>
+                        <li class="fragment">Facilitates deployments - DevOps friendly, but complex distributed system </li>
                         <li class="fragment">Organized independent development, but highly service interaction needed</li>
                         <li class="fragment">Simplifies functional testing, but int tests can be cumbersome</li>
                     </ul>
                     <p class="fragment">Therefore, optimal architectural pattern?</p>
+									<aside class="notes">
+										<ul>
+											<li class="">Facilita la continua publicacion de versiones, manejo de transacciones complejo</li>
+											<li class="">Propio para desarrollo en equipos independientes, pero require mucha comunicacion entre ellos</li>
+											<li class="">Tests de integracion pueden ser complicados, dado que cada equipo solo ve una parte del todo</li>
+										</ul>
+									</aside>
                 </section>
 			</section>
 			<section>
@@ -137,11 +162,18 @@
 					<p>An automobile company requires to migrate a monolithic legacy system. The new system should be web-based with
 						optimized performance and highly scalable.
 					</p>
+					<aside class="notes">
+						<ul>
+							<li class="">Systema de conformidad de vehiculos para mercados</li>
+							<li class="">Se encarga de documetar cada modelo de cada marca y sus diferentes varintes</li>
+							<li class="">Cada mercado require diferente informacion acerca de los vehiculos</li>
+						</ul>
+					</aside>
 				</section>
-                <section>
-                    <h3>Our Microservice Application</h3>
-									<img data-src="./image/project_ms_architecture.png" width="80%">
-                </section>
+				<section>
+						<h3>Our Microservice Application</h3>
+					<img data-src="./image/project_ms_architecture.png" width="80%">
+				</section>
 				<section>
 					<h2>Meta Data System</h2>
 					<p>Manages all meta data for the whole system.</p>
